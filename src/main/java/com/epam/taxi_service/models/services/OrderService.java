@@ -7,7 +7,7 @@ import com.epam.taxi_service.dto.OrderDTO;
 import java.util.List;
 
 public interface OrderService extends Service<OrderDTO>{
-    void add(OrderDTO orderDTO, String addressOfDeparture, String addressOfDestination) throws ServiceException;
+    void add(OrderDTO orderDTO) throws ServiceException;
 
     List<OrderDTO> getSortedOrders(String query) throws ServiceException;
 

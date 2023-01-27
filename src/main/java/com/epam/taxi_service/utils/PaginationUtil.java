@@ -2,15 +2,10 @@ package com.epam.taxi_service.utils;
 
 import jakarta.servlet.http.HttpServletRequest;
 
-import static com.epam.taxi_service.controllers.actions.implementation.Parameters.*;
+import static com.epam.taxi_service.controller.actions.implementation.Parameters.*;
 
 public class PaginationUtil {
-    /**
-     * Calculates required attributes and sets them to request. In case of wrong offset and/or records - sets
-     * default values (as for now 0 and 5)
-     * @param totalRecords - total number of records
-     * @param request - request to get offset, records and to set other attributes
-     */
+
     public static void paginate(int totalRecords, HttpServletRequest request) {
         int offset = getInt(request.getParameter(OFFSET), 0, 0);
         int records = getInt(request.getParameter(RECORDS), 1, 5);

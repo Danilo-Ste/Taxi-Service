@@ -3,7 +3,7 @@ package com.epam.taxi_service.utils;
 import java.util.HashSet;
 import java.util.*;
 
-import static com.epam.taxi_service.controllers.actions.implementation.Parameters.*;
+import static com.epam.taxi_service.controller.actions.implementation.Parameters.*;
 
 
 public class UserQueryBuilder extends QueryBuilder{

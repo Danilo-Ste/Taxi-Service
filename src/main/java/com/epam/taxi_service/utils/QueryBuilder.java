@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringJoiner;
 
-import static com.epam.taxi_service.controllers.actions.implementation.ParameterValues.*;
+import static com.epam.taxi_service.controller.actions.implementation.ParameterValues.*;
 
 public abstract class QueryBuilder {
     private final List<String> filters = new ArrayList<>();
