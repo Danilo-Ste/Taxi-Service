@@ -29,9 +29,9 @@ public class CarServiceImplementation implements CarServices {
     @Override
     public void add(CarDTO carDTO, String address, String category) throws ServiceException {
         validateCar(carDTO);
-        Car event = convertDTOToCar(carDTO);
+        Car car = convertDTOToCar(carDTO);
         try {
-            carDAO.add(event);
+            carDAO.add(car);
         } catch (DAOException e) {
             checkExceptionType(e);
         }

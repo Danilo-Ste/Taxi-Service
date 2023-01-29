@@ -15,9 +15,10 @@ import static com.epam.taxi_service.Exception.message_for_exceptions.MessageForE
 import static com.epam.taxi_service.Exception.message_for_exceptions.MessageForExceptions.ENTER_CORRECT_SURNAME;
 import static com.epam.taxi_service.utils.Convertor.convertDTOToUser;
 import static com.epam.taxi_service.utils.Convertor.convertUserToDTO;
+import static com.epam.taxi_service.utils.PasswordHash.encode;
 import static com.epam.taxi_service.utils.PasswordHash.verify;
 import static com.epam.taxi_service.utils.Validator.*;
-import static jdk.internal.net.http.common.Utils.encode;
+
 
 @RequiredArgsConstructor
 public class UserServiceІmplementation implements UserService {

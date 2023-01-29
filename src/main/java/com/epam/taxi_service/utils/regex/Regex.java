@@ -5,11 +5,12 @@ public class Regex {
 
     public static final String PASSWORD_REGEX = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{8,20}$";
 
-    public static final String NAME_REGEX = "^[A-Za-zА-ЩЬЮЯҐІЇЄа-щьюяґіїє'\\- ]{1,30}";
+    public static final String NAME_REGEX = "^[A-Za-zА-ЩЮЯа-щьюяґіїє'\\- ]{1,30}";
 
     public static final String COMPLEX_NAME_REGEX = "^[\\wА-ЩЬЮЯҐІЇЄа-щьюяґіїє'.,;:+\\-~`!@#$^&*()={}| ]{2,70}";
 
     public static final String DESCRIPTION_REGEX = "^[\\wА-ЩЬЮЯҐІЇЄа-щьюяґіїє'.,;:+\\-~`!@#$^&*()={}| ]{1,200}";
 
+    public static final String CAR_ADDRESS_REGEX = "^[A-Za-zА-ЩЮЯҐІЇЄа-я\\SA-Za-zА-ЩЮЯҐІЇЄа-я'\\S1-9]{1-50}";
     private Regex() {}
 }

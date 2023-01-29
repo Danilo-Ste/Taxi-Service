@@ -11,5 +11,4 @@ public interface OrderService extends Service<OrderDTO>{
 
     List<OrderDTO> getSortedOrders(String query) throws ServiceException;
 
-    List<OrderDTO>  getSorted(String query) throws ServiceException;
 }
