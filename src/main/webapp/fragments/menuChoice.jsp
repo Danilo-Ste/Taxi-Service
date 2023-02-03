@@ -7,6 +7,6 @@
     </c:when>
 
     <c:when test="${sessionScope.role eq 'VISITOR'}">
-        <jsp:include page="visitorMenu.jsp"/>
+        <jsp:include page="clientMenu.jsp"/>
     </c:when>
 </c:choose>

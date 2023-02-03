@@ -1,5 +1,6 @@
 package com.epam.taxi_service.controller.actions;
 
+import com.epam.taxi_service.dto.OrderDTO;
 import com.epam.taxi_service.dto.UserDTO;
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -19,12 +20,27 @@ public class Util {
         return (String) request.getSession().getAttribute(CURRENT_PATH);
     }
 
+    public static void transferOrderDTOFromSessionToRequest(HttpServletRequest request) {
+        OrderDTO order = (OrderDTO) request.getSession().getAttribute(ORDER);
+        if (order != null) {
+            request.setAttribute(ORDER, order);
+            request.getSession().removeAttribute(ORDER);
+        }
+    }
 
     public static void transferUserDTOFromSessionToRequest(HttpServletRequest request) {
         UserDTO user = (UserDTO) request.getSession().getAttribute(USER);
         if (user != null) {
             request.setAttribute(USER, user);
             request.getSession().removeAttribute(USER);
+        }
+    }
+
+    public static void transferOrderDTOFromSessionToRequest(HttpServletRequest request, String attributeName) {
+        OrderDTO order = (OrderDTO) request.getSession().getAttribute(ORDER);
+        if (order != null) {
+            request.setAttribute(attributeName, order);
+            request.getSession().removeAttribute(attributeName);
         }
     }
 

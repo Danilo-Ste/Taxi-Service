@@ -23,6 +23,8 @@ public class ActionFactory {
     static {
         ACTION_MAP.put(DEFAULT_ACTION, new DefaultAction());
         ACTION_MAP.put(SIGN_UP_ACTION, new SignUpAction(APP_CONTEXT));
+        ACTION_MAP.put(SIGN_IN_ACTION, new SignInAction(APP_CONTEXT));
+        ACTION_MAP.put(CREATE_ORDER_ACTION, new CreateOrderAction(APP_CONTEXT));
         ACTION_MAP.put(ERROR_ACTION, new ErrorAction());
 
         ACTION_MAP.put(SIGN_OUT_ACTION, new SignOutAction());

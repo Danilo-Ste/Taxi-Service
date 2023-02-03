@@ -29,11 +29,13 @@ public class EditProfileAction implements Action {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
+        System.out.println("execute");
         return isPostMethod(request) ? executePost(request) : executeGet(request);
     }
 
 
     private String executeGet(HttpServletRequest request) {
+        System.out.println("executeGet EditProfile");
         transferStringFromSessionToRequest(request, MESSAGE);
         transferStringFromSessionToRequest(request, ERROR);
         transferUserDTOFromSessionToRequest(request);
@@ -42,6 +44,7 @@ public class EditProfileAction implements Action {
 
 
     private String executePost(HttpServletRequest request) throws ServiceException {
+        System.out.println("executePost EditProfile");
         UserDTO sessionUser = (UserDTO) request.getSession().getAttribute(LOGGED_USER);
         UserDTO user = getUserDTO(request, sessionUser);
         try {
@@ -56,6 +59,7 @@ public class EditProfileAction implements Action {
     }
 
     private UserDTO getUserDTO(HttpServletRequest request, UserDTO currentUser) {
+        System.out.println("getUserDTO EditProfile");
         return UserDTO.builder()
                 .id(currentUser.getId())
                 .email(request.getParameter(EMAIL))
@@ -65,6 +69,7 @@ public class EditProfileAction implements Action {
     }
 
     private void updateSessionUser(UserDTO currentUser, UserDTO user) {
+        System.out.println("updateSessionUser EditProfile");
         currentUser.setEmail(user.getEmail());
         currentUser.setName(user.getName());
         currentUser.setSurname(user.getSurname());

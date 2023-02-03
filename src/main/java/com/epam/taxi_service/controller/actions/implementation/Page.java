@@ -34,6 +34,8 @@ public class Page {
     /** Moderators pages */
     public static final String VIEW_EVENTS_PAGE = "viewEvents.jsp";
     public static final String CREATE_EVENT_PAGE = "createEvent.jsp";
+
+    public static final String CREATE_ORDER_PAGE = "createOrder.jsp";
     public static final String SEARCH_EVENT_PAGE = "searchEvent.jsp";
     public static final String VIEW_EVENT_PAGE = "viewEvent.jsp";
     public static final String EDIT_EVENT_PAGE = "editEvent.jsp";

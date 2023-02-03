@@ -11,8 +11,8 @@ import java.time.LocalDate;
 import static com.epam.taxi_service.Exception.message_for_exceptions.MessageForExceptions.*;
 
 public class Validator {
-    public static void validateAddress(String address) throws IncorrectFormatException {
-        validateFormat(address, Regex.EMAIL_REGEX, ENTER_CORRECT_EMAIL);
+    public static void validateAddressForTaxi(String address) throws IncorrectFormatException {
+        validateFormat(address, Regex.CAR_ADDRESS_REGEX, ENTER_CORRECT_ADDRESS);
     }
     public static void validateEmail(String email) throws IncorrectFormatException {
         validateFormat(email, Regex.EMAIL_REGEX, ENTER_CORRECT_EMAIL);
@@ -28,6 +28,10 @@ public class Validator {
     }
 
     public static void validateComplexName(String name, String message) throws IncorrectFormatException {
+        validateFormat(name, Regex.COMPLEX_NAME_REGEX, message);
+    }
+
+    public static void validateAddresses(String name, String message) throws IncorrectFormatException {
         validateFormat(name, Regex.COMPLEX_NAME_REGEX, message);
     }
 

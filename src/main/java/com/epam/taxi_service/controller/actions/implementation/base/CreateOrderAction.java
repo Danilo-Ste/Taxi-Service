@@ -9,8 +9,10 @@ import com.epam.taxi_service.models.services.OrderService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-import static com.epam.taxi_service.controller.actions.Util.getActionToRedirect;
+import static com.epam.taxi_service.controller.actions.Util.*;
+import static com.epam.taxi_service.controller.actions.implementation.ActionNames.CREATE_ORDER_ACTION;
 import static com.epam.taxi_service.controller.actions.implementation.ActionNames.SEARCH_ORDER_ACTION;
+import static com.epam.taxi_service.controller.actions.implementation.Page.CREATE_ORDER_PAGE;
 import static com.epam.taxi_service.controller.actions.implementation.Parameters.*;
 
 public class CreateOrderAction implements Action {
@@ -27,13 +29,26 @@ public class CreateOrderAction implements Action {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServiceException {
+        return isPostMethod(request) ? executePost(request) : executeGet(request);
+    }
+
+    private String executeGet(HttpServletRequest request) {
+        transferStringFromSessionToRequest(request, ERROR);
+        transferOrderDTOFromSessionToRequest(request, ORDER);
+        return CREATE_ORDER_PAGE;
+    }
+
+    private String executePost(HttpServletRequest request) throws ServiceException {
         OrderDTO order = getOrderDTO(request);
         try {
             orderService.add(order);
+            //long eventId = eventService.getByTitle(event.getTitle()).getId();
+           // return getActionToRedirect(SEARCH_ORDER_ACTION, ID, String.valueOf(eventId));
         } catch (IncorrectFormatException e) {
+            request.getSession().setAttribute(ORDER, order);
             request.getSession().setAttribute(ERROR, e.getMessage());
         }
-        return getActionToRedirect(SEARCH_ORDER_ACTION, ID, String.valueOf(order.getCar_id()));
+        return getActionToRedirect(CREATE_ORDER_ACTION);
     }
 
     private OrderDTO getOrderDTO(HttpServletRequest request){

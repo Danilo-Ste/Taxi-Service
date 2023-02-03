@@ -15,4 +15,5 @@ public class User {
     private transient String password;
     @EqualsAndHashCode.Exclude private int roleId;
 
+
 }

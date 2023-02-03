@@ -70,7 +70,7 @@ public class DAOUserSQL implements UserDAO {
         }
         return  Optional.ofNullable(user);
     }
-    public User getById(long userId) throws DAOException {
+    public Optional<User> getById(long userId) throws DAOException {
         User user = null;
         try (Connection connection = dataSource.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(GET_USER_BY_ID)) {
@@ -84,7 +84,7 @@ public class DAOUserSQL implements UserDAO {
         } catch (SQLException e) {
             throw new DAOException(e);
         }
-        return  user;
+        return  Optional.ofNullable(user);
     }
 
     @Override

@@ -37,12 +37,4 @@ public interface UserService extends Service<UserDTO>{
 
     void setRole(String email, int roleId) throws ServiceException;
 
-
-    void registerForEvent(long userId, String eventIdString) throws ServiceException;
-
-
-    void cancelRegistration(long userId, String eventIdString) throws ServiceException;
-
-
-    boolean isRegistered(long userId, String eventIdString) throws ServiceException;
 }

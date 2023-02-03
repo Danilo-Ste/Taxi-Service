@@ -11,7 +11,7 @@ public interface CarServices extends Service<CarDTO>{
 
     List<CarDTO> getSortedCars(String query) throws ServiceException;
 
-    void changeAddress(long CarId, String newAddress) throws ServiceException;
+    void changeAddress(String carId, String newAddress) throws ServiceException;
 
     void setState(int id, int roleId) throws ServiceException;
 }

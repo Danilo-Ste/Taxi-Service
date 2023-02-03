@@ -1,30 +1,21 @@
 package com.epam.taxi_service.models.services.service_Іmplementation;
 
-import com.epam.taxi_service.Exception.DAOException;
-import com.epam.taxi_service.Exception.DuplicateEmailException;
-import com.epam.taxi_service.Exception.IncorrectFormatException;
-import com.epam.taxi_service.Exception.ServiceException;
-import com.epam.taxi_service.dto.CarDTO;
+import com.epam.taxi_service.Exception.*;
 import com.epam.taxi_service.dto.OrderDTO;
-import com.epam.taxi_service.models.dao.CarDAO;
 import com.epam.taxi_service.models.dao.OrderDAO;
-import com.epam.taxi_service.models.entities.Car;
 import com.epam.taxi_service.models.entities.Order;
 import com.epam.taxi_service.models.services.OrderService;
+import lombok.RequiredArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static com.epam.taxi_service.utils.Convertor.*;
-import static com.epam.taxi_service.utils.Validator.validateAddress;
-
+import static com.epam.taxi_service.utils.Validator.*;
+@RequiredArgsConstructor
 public class OrderServiceImplementation implements OrderService {
 
     private final OrderDAO orderDAO;
-
-    public OrderServiceImplementation(OrderDAO orderDAO) {
-        this.orderDAO = orderDAO;
-    }
 
 
     @Override
@@ -39,8 +30,8 @@ public class OrderServiceImplementation implements OrderService {
     }
 
     private void validateOrder(OrderDTO orderDTO) throws IncorrectFormatException {
-        validateAddress(orderDTO.getAddressOfDeparture());
-        validateAddress(orderDTO.getAddressOfDestination());
+        validateAddressForTaxi(orderDTO.getAddressOfDeparture());
+        validateAddressForTaxi(orderDTO.getAddressOfDestination());
     }
 
     private void checkExceptionType(DAOException e) throws ServiceException {
@@ -66,21 +57,48 @@ public class OrderServiceImplementation implements OrderService {
 
     @Override
     public OrderDTO getById(String idString) throws ServiceException {
-        return null;
+        OrderDTO orderDTO;
+        long orderId = getId(idString);
+        try {
+            Order order = orderDAO.getById(orderId).orElseThrow(NoSuchOrderException::new);
+            orderDTO = convertOrderToDTO(order);
+        } catch (DAOException e) {
+            throw new ServiceException(e);
+        }
+        return orderDTO;
     }
 
     @Override
     public List<OrderDTO> getAll() throws ServiceException {
-        return null;
+        List<OrderDTO> orderDTOS = new ArrayList<>();
+        try {
+            List<Order> reports = orderDAO.getAll();
+            reports.forEach(order -> orderDTOS.add(convertOrderToDTO(order)));
+        } catch (DAOException e) {
+            throw new ServiceException(e);
+        }
+        return orderDTOS;
     }
 
     @Override
     public void update(OrderDTO dto) throws ServiceException {
-
+        validateAddressForTaxi(dto.getAddressOfDeparture());
+        validateAddressForTaxi(dto.getAddressOfDestination());
+        Order order = convertDTOToOrder(dto);
+        try {
+            orderDAO.update(order);
+        } catch (DAOException e) {
+            throw new ServiceException(e);
+        }
     }
 
     @Override
     public void delete(String idString) throws ServiceException {
-
+        long orderId = getId(idString);
+        try {
+            orderDAO.delete(orderId);
+        } catch (DAOException e) {
+            throw new ServiceException(e);
+        }
     }
 }

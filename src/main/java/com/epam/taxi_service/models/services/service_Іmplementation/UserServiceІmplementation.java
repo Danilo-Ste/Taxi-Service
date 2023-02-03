@@ -30,7 +30,7 @@ public class UserServiceІmplementation implements UserService {
         UserDTO userDTO;
         long userId = getId(idString);
         try {
-            User user = userDAO.getById(userId);
+            User user = userDAO.getById(userId).orElseThrow(NoSuchOrderException::new);;
             userDTO = convertUserToDTO(user);
         } catch (DAOException e) {
             throw new ServiceException(e);
@@ -147,7 +147,7 @@ public class UserServiceІmplementation implements UserService {
     public void changePassword(long userId, String password, String newPass, String confirmPass) throws ServiceException {
         checkStrings(password, newPass, confirmPass);
         try {
-            User user = userDAO.getById(userId);
+            User user = userDAO.getById(userId).orElseThrow(NoSuchUserException::new);
             verify(user.getPassword(), password);
             checkPasswordMatching(newPass, confirmPass);
             validatePassword(newPass);
@@ -170,22 +170,11 @@ public class UserServiceІmplementation implements UserService {
         }
     }
 
-    @Override
-    public void registerForEvent(long userId, String eventIdString) throws ServiceException {
 
-    }
-
-    @Override
-    public void cancelRegistration(long userId, String eventIdString) throws ServiceException {
-
-    }
     private void validateUser(UserDTO userDTO) throws IncorrectFormatException {
         validateEmail(userDTO.getEmail());
         validateName(userDTO.getName(), ENTER_CORRECT_NAME);
         validateName(userDTO.getSurname(), ENTER_CORRECT_SURNAME);
     }
-    @Override
-    public boolean isRegistered(long userId, String eventIdString) throws ServiceException {
-        return false;
-    }
+
 }

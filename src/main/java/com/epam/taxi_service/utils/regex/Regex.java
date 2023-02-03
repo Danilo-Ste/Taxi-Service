@@ -11,6 +11,6 @@ public class Regex {
 
     public static final String DESCRIPTION_REGEX = "^[\\wА-ЩЬЮЯҐІЇЄа-щьюяґіїє'.,;:+\\-~`!@#$^&*()={}| ]{1,200}";
 
-    public static final String CAR_ADDRESS_REGEX = "^[A-Za-zА-ЩЮЯҐІЇЄа-я\\SA-Za-zА-ЩЮЯҐІЇЄа-я'\\S1-9]{1-50}";
+    public static final String CAR_ADDRESS_REGEX = "^[A-Za-zА-ЯІЇа-яіЇ]+\\s*[A-Za-zА-ЯІЇа-яіЇ]*\\s*[A-Za-zА-ЯІЇа-яіЇ]*\\s{1}[\\d/]*\\s{1}[A-Za-zА-ЯІЇа-яіЇ]*$";
     private Regex() {}
 }

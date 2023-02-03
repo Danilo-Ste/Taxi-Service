@@ -33,6 +33,7 @@ public class ActionNames {
     public static final String VIEW_EVENTS_ACTION = "view-events";
     public static final String EVENTS_PDF_ACTION = "events-pdf";
     public static final String CREATE_EVENT_ACTION = "create-event";
+    public static final String CREATE_ORDER_ACTION = "create-order";
     public static final String SEARCH_EVENT_ACTION = "search-event";
     public static final String DELETE_EVENT_ACTION = "delete-event";
     public static final String EDIT_EVENT_ACTION = "edit-event";

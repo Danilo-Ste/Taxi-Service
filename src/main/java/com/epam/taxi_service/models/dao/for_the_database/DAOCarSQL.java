@@ -5,7 +5,6 @@ import com.epam.taxi_service.models.dao.CarDAO;
 import com.epam.taxi_service.models.entities.Car;
 import com.epam.taxi_service.models.entities.Category;
 import com.epam.taxi_service.models.entities.State;
-import com.epam.taxi_service.models.entities.User;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -14,10 +13,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static com.epam.taxi_service.models.dao.for_the_database.queries_and_constants.SQLCarQueries.*;
 import static com.epam.taxi_service.models.dao.for_the_database.queries_and_constants.SQLFields.*;
-import static com.epam.taxi_service.models.dao.for_the_database.queries_and_constants.SQLUserQueries.*;
 
 public class DAOCarSQL implements CarDAO {
     private final DataSource dataSource;
@@ -40,7 +39,7 @@ public class DAOCarSQL implements CarDAO {
     }
 
     @Override
-    public Car getById(long id) throws DAOException {
+    public Optional<Car> getById(long id) throws DAOException {
         Car car = null;
         try (Connection connection = dataSource.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(GET_CAR_BY_ID)) {
@@ -54,7 +53,7 @@ public class DAOCarSQL implements CarDAO {
         } catch (SQLException e) {
             throw new DAOException(e);
         }
-        return  car;
+        return  Optional.ofNullable(car);
     }
 
     private Car createCar(ResultSet resultSet) throws SQLException{
