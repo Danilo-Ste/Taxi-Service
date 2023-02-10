@@ -30,6 +30,8 @@ public class DomainActionsSets {
         loggedUserActions.addAll(anonymousUserActions);
         loggedUserActions.add(EDIT_PROFILE_ACTION);
         loggedUserActions.add(CHANGE_PASSWORD_ACTION);
+        loggedUserActions.add(CREATE_ORDER_ACTION);
+
     }
 
     static {
@@ -43,6 +45,7 @@ public class DomainActionsSets {
     static {
         adminActions.addAll(loggedUserActions);
         adminActions.add(SEARCH_USER_ACTION);
+        adminActions.add(ADD_CAR_ACTION);
         adminActions.add(DELETE_USER_ACTION);
         adminActions.add(SET_ROLE_ACTION);
         adminActions.add(VIEW_USERS_ACTION);

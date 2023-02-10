@@ -9,7 +9,6 @@ import lombok.EqualsAndHashCode;
 
 import java.util.List;
 @Data
-@EqualsAndHashCode(of = {"address"})
 @Builder
 public class CarDTO {
     private long id;

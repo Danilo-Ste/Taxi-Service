@@ -40,8 +40,8 @@ public class Validator {
     }
 
     private static void validateFormat(String name, String regex,String message) throws IncorrectFormatException {
-        if (name == null || !name.matches(regex))
-            throw new IncorrectFormatException(message);
+        //if (name == null || !name.matches(regex))
+            //throw new IncorrectFormatException(message);
     }
 
     public static void validateDate(LocalDate date) throws IncorrectFormatException {

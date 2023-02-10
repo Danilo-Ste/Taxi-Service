@@ -117,6 +117,7 @@ public class DAOCarSQL implements CarDAO {
         preparedStatement.setString(++k, car.getAddress());
         preparedStatement.setLong(++k, car.getCategoryId());
         preparedStatement.setLong(++k,car.getCapacity());
+        preparedStatement.setLong(++k, car.getIdState());
     }
     @Override
     public List<Car> getAll() throws DAOException {

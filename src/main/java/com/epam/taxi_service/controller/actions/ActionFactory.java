@@ -14,10 +14,8 @@ public class ActionFactory {
     @Getter
     private static final ActionFactory actionFactory = new ActionFactory();
 
-    /** Map of all available actions, name as key and class instance as value */
     private static final Map<String, Action> ACTION_MAP = new HashMap<>();
 
-    /** Application context instance. Contains all required services and utils */
     private static final AppContext APP_CONTEXT = AppContext.getAppContext();
 
     static {
@@ -29,6 +27,7 @@ public class ActionFactory {
 
         ACTION_MAP.put(SIGN_OUT_ACTION, new SignOutAction());
         ACTION_MAP.put(EDIT_PROFILE_ACTION, new EditProfileAction(APP_CONTEXT));
+        ACTION_MAP.put(ADD_CAR_ACTION, new AddCarAction(APP_CONTEXT));
         ACTION_MAP.put(CHANGE_PASSWORD_ACTION, new ChangePasswordAction(APP_CONTEXT));
 
         ACTION_MAP.put(VIEW_USERS_ACTION, new ViewUsersAction(APP_CONTEXT));

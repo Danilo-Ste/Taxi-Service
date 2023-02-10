@@ -23,10 +23,8 @@ public class AppContext {
     private final CarServices carService;
     private final UserService userService;
     //private final EmailSender emailSender;
-    //private final PdfUtil pdfUtil;
 
     private AppContext(ServletContext servletContext, String propertiesFile) {
-        //pdfUtil = new PdfUtil(servletContext);
         Properties properties = getProperties(propertiesFile);
         //emailSender = new EmailSender(properties);
         DataSource dataSource = ConnectionPool.getDataSource(properties);

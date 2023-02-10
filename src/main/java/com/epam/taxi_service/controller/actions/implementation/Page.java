@@ -26,6 +26,7 @@ public class Page {
     public static final String VIEW_EVENT_BY_VISITOR_PAGE = "viewEventByVisitor.jsp";
 
     /** Speakers pages */
+    public static final String ADD_CAR_PAGE = "addCar.jsp";
     public static final String VIEW_SPEAKERS_EVENTS_PAGE = "viewSpeakersEvents.jsp";
     public static final String VIEW_SPEAKERS_REPORTS_PAGE = "viewSpeakersReports.jsp";
     public static final String VIEW_EVENT_BY_SPEAKER_PAGE = "viewEventBySpeaker.jsp";
@@ -36,6 +37,7 @@ public class Page {
     public static final String CREATE_EVENT_PAGE = "createEvent.jsp";
 
     public static final String CREATE_ORDER_PAGE = "createOrder.jsp";
+    public static final String UNABLE_TO_CREATE_AN_ORDER_PAGE = "unableToCreateAnOrder.jsp";
     public static final String SEARCH_EVENT_PAGE = "searchEvent.jsp";
     public static final String VIEW_EVENT_PAGE = "viewEvent.jsp";
     public static final String EDIT_EVENT_PAGE = "editEvent.jsp";

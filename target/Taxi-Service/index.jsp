@@ -18,7 +18,7 @@
 
 <jsp:include page="fragments/mainMenu.jsp"/>
 
-
+<jsp:include page="fragments/menuChoice.jsp"/><br><br>
 
 
 <figure class="text-center">

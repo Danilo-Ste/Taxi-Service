@@ -6,6 +6,7 @@ import com.epam.taxi_service.Exception.ServiceException;
 import com.epam.taxi_service.controller.actions.Action;
 import com.epam.taxi_service.controller.context.AppContext;
 import com.epam.taxi_service.dto.UserDTO;
+import com.epam.taxi_service.models.entities.State;
 import com.epam.taxi_service.models.services.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -36,7 +37,6 @@ public class SignInAction implements Action {
     }
 
     private String executeGet(HttpServletRequest request) {
-        System.out.println("executeGet");
         transferStringFromSessionToRequest(request, EMAIL);
         transferStringFromSessionToRequest(request, MESSAGE);
         transferStringFromSessionToRequest(request, ERROR);
@@ -44,7 +44,6 @@ public class SignInAction implements Action {
     }
 
     private String executePost(HttpServletRequest request) throws ServiceException {
-        System.out.println("executePost");
         String email = request.getParameter(EMAIL);
         String password = request.getParameter(PASSWORD);
         try {
@@ -60,7 +59,6 @@ public class SignInAction implements Action {
     }
 
     private static void setLoggedUser(HttpServletRequest request, UserDTO user) {
-        System.out.println("setLoggedUser");
         request.getSession().setAttribute(LOGGED_USER, user);
         request.getSession().setAttribute(ROLE, user.getRole());
     }

@@ -29,7 +29,7 @@
                 </c:if>
                 <c:if test="${not empty sessionScope.loggedUser}">
                     <li class="nav-item">
-                        <a class="nav-link"  href="selectCarOptionsToOrder.jsp"><fmt:message key="create.order"/></a>
+                        <a class="nav-link"  href="createOrder.jsp"><fmt:message key="create.order"/></a>
                     </li>
                 </c:if>
             </ul>

@@ -6,7 +6,7 @@ import java.util.Set;
 import static com.epam.taxi_service.controller.actions.implementation.Parameters.*;
 
 public class OrderQueryBuilder extends QueryBuilder{
-    private static final String ORDER_DOT_ID = "order.id";
+    private static final String ORDER_DOT_ID = "id";
     /** Contains set of allowed sort fields */
     private static final Set<String> ORDER_SORT_FIELDS_SET = new HashSet<>();
 

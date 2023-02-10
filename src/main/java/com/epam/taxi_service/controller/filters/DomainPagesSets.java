@@ -32,6 +32,8 @@ public class DomainPagesSets {
     static {
         loggedUserPages.addAll(anonymousUserPages);
         loggedUserPages.add(PROFILE_PAGE);
+        loggedUserPages.add(CREATE_ORDER_PAGE);
+        loggedUserPages.add(UNABLE_TO_CREATE_AN_ORDER_PAGE);
         loggedUserPages.add(EDIT_PROFILE_PAGE);
         loggedUserPages.add(CHANGE_PASSWORD_PAGE);
     }
@@ -42,6 +44,7 @@ public class DomainPagesSets {
 
     static {
         adminPages.addAll(loggedUserPages);
+        adminPages.add(ADD_CAR_PAGE);
         adminPages.add(VIEW_USERS_PAGE);
         adminPages.add(SEARCH_USER_PAGE);
     }

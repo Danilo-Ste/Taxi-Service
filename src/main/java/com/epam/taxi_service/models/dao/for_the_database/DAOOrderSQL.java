@@ -26,10 +26,13 @@ public class DAOOrderSQL implements OrderDAO {
 
     @Override
     public void add(Order order) throws DAOException {
+        System.out.println(ADD_ORDER);
         try (Connection connection = dataSource.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(ADD_ORDER)) {
+            System.out.println(ADD_ORDER);
             int k = 0;
             setStatementFieldsForAddMethod(order, preparedStatement, k);
+            System.out.println(preparedStatement);
             preparedStatement.execute();
         } catch (SQLException e) {
             throw new DAOException(e);
@@ -37,10 +40,15 @@ public class DAOOrderSQL implements OrderDAO {
     }
 
     private int setStatementFieldsForAddMethod(Order order, PreparedStatement preparedStatement, int k) throws SQLException {
+        System.out.println(preparedStatement);
         preparedStatement.setString(++k, order.getAddressOfDeparture());
+        System.out.println(order.getAddressOfDeparture());
         preparedStatement.setString(++k, order.getAddressOfDestination());
+        System.out.println(order.getAddressOfDestination());
         preparedStatement.setLong(++k, order.getUser_id());
+        System.out.println(order.getUser_id());
         preparedStatement.setLong(++k, order.getCar_id());
+        System.out.println( order.getCar_id());
         return k;
     }
 

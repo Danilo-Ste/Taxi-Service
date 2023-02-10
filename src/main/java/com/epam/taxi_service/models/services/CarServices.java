@@ -7,7 +7,7 @@ import com.epam.taxi_service.dto.UserDTO;
 import java.util.List;
 
 public interface CarServices extends Service<CarDTO>{
-    void add(CarDTO carDTO, String address, String category) throws ServiceException;
+    void add(CarDTO carDTO) throws ServiceException;
 
     List<CarDTO> getSortedCars(String query) throws ServiceException;
 

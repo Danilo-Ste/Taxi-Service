@@ -27,6 +27,11 @@
                         <a class="nav-link"  href="profile.jsp"><fmt:message key="profile"/></a>
                     </li>
                 </c:if>
+                <c:if test="${not empty sessionScope.loggedUser}">
+                    <li class="nav-item">
+                        <a class="nav-link"  href="createOrder.jsp"><fmt:message key="create.order"/></a>
+                    </li>
+                </c:if>
             </ul>
             <ul class="navbar-nav ms-auto mx-4 mb-4 mb-md-0">
                 <c:choose>

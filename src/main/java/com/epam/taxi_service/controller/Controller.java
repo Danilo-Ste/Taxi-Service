@@ -12,6 +12,7 @@ import java.io.IOException;
 import static com.epam.taxi_service.controller.actions.implementation.Page.ERROR_PAGE;
 import static com.epam.taxi_service.controller.actions.implementation.Parameters.ACTION;
 
+
 public class Controller extends HttpServlet {
     private static final Logger logger = LoggerFactory.getLogger(Controller.class);
     private static final ActionFactory ACTION_FACTORY = ActionFactory.getActionFactory();
@@ -19,15 +20,12 @@ public class Controller extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         request.getRequestDispatcher(process(request, response)).forward(request, response);
     }
 
     @Override
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        System.out.println("Post");
-        System.out.println(request);
-        System.out.println(process(request, response));
         response.sendRedirect(process(request, response));
     }
 

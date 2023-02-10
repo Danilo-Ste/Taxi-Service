@@ -6,7 +6,7 @@ public class ActionNames {
     public static final String SIGN_UP_ACTION ="sign-up";
     public static final String PASSWORD_RESET_ACTION = "password-reset";
     public static final String ERROR_ACTION = "error";
-
+    public static final String ADD_CAR_ACTION = "add-car";
     public static final String SIGN_OUT_ACTION = "sign-out";
     public static final String EDIT_PROFILE_ACTION = "edit-profile";
     public static final String CHANGE_PASSWORD_ACTION = "change-password";
@@ -34,6 +34,7 @@ public class ActionNames {
     public static final String EVENTS_PDF_ACTION = "events-pdf";
     public static final String CREATE_EVENT_ACTION = "create-event";
     public static final String CREATE_ORDER_ACTION = "create-order";
+    public static final String UNABLE_TO_CREATE_ORDER = "unable-to-create-an-order";
     public static final String SEARCH_EVENT_ACTION = "search-event";
     public static final String DELETE_EVENT_ACTION = "delete-event";
     public static final String EDIT_EVENT_ACTION = "edit-event";

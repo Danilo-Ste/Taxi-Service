@@ -6,7 +6,7 @@ public class QueryBuilderUtil {
     }
 
 
-    public static QueryBuilder eventQueryBuilder() {
+    public static QueryBuilder orderQueryBuilder() {
         return new OrderQueryBuilder();
     }
 
