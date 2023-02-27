@@ -21,6 +21,12 @@
 
 <div class="col-lg-5 mx-auto p-4 py-md-5">
     <tags:header value="create.order"/>
+
+    <figure class="text-center">
+        <img src="image/car_icon.png" class="figure-img img-fluid rounded" height="200" width="200">
+        <figcaption class="figure-caption"><fmt:message key="pic.description"/></figcaption>
+    </figure>
+
     <form method="POST" action="controller">
         <input type="hidden" name="action" value="create-order">
 

@@ -24,6 +24,10 @@
 
 <div class="col-lg-7 mx-auto p-4 py-md-5">
     <tags:header value="profile.info"/>
+    <figure >
+        <img src="image/user_icon.jpeg" class="figure-img img-fluid rounded" height="100" width="100">
+        <figcaption class="figure-caption"><fmt:message key="pic.description"/></figcaption>
+    </figure>
 
     <main>
         <p class="fs-6"><fmt:message key="name"/>:</p>

@@ -25,6 +25,20 @@
 <div class="col-lg-7 mx-auto p-4 py-md-5">
     <tags:header value="users"/>
 
+    <form method="GET" action="controller">
+        <input type="hidden" name="action" value="search-user">
+
+        <div>
+            <tags:notEmptyMessage value="${requestScope.message}"/><br>
+            <label class="form-label fs-5" for="email"><fmt:message key="search.user"/></label>
+            <input class="form-control" type="email" name="email" id="email"
+                   pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" required>
+            <tags:notEmptyError value="${requestScope.error}"/><br>
+        </div>
+
+        <button type="submit" class="btn btn-dark mt-2 mb-4"><fmt:message key="search"/></button>
+    </form>
+
     <div class="row">
         <form class="col-11" method="GET" action="controller">
             <input type="hidden" name="action" value="view-users">
@@ -54,7 +68,7 @@
 
     <div class="bd-example-snippet bd-code-snippet">
         <div class="bd-example">
-            <table class="table table-striped" aria-label="user-table">
+            <table class="table table-bordered" aria-label="user-table">
                 <thead>
                 <tr>
                     <c:set var="base" value="controller?action=view-users&role=${param.role}&"/>

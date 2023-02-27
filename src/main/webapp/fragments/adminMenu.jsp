@@ -19,11 +19,6 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-decoration-underline" aria-current="page" href="searchUser.jsp">
-                        <fmt:message key="search.users"/>
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link text-decoration-underline" aria-current="page" href="addCar.jsp">
                         <fmt:message key="add.car"/>
                     </a>
