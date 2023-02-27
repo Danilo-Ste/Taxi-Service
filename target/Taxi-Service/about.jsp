@@ -8,7 +8,7 @@
 <html lang="${sessionScope.locale}">
 
 <head>
-    <title>Conference Smart App. <fmt:message key="about"/></title>
+    <title>Taxi service <fmt:message key="about"/></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -25,14 +25,13 @@
     <tags:header value="about"/>
 
     <main>
-        <p class="fs-5 col-md-12">Finding the right Conference venue in the right location at the right price to meet the budget
-            can be very time-consuming and stressful for the Meeting booker, so why not use the FREE service
-            provided by an experienced Conference Agency.</p><br>
+        <p class="fs-5 col-md-12">Need to get to your destination quickly and cheaply?
+            Order our taxi and get a discount depending on the price of the trip.
+            We offer a large selection of taxis of various categories.
+            We are a young company, but we provide excellent transportation conditions and guarantee comfort.</p><br>
 
-        <p class="fs-5 col-md-12">An experienced conference agent will understand what it takes to make the meeting successful.
-            They will take the brief and source a minimum of three options in a location of the client's choice.
-            These days there are a number of other options available instead of hotels and conference centres,
-            the choices may include unusual venues the client may not be familiar with.</p>
+        <p class="fs-5 col-md-8">address: Medovaya Pechery street, 39, Lviv, Lviv region</p>
+        <p class="fs-5 col-md-8">phone number: +380688810756</p>
     </main>
 </div>
 

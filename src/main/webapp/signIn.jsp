@@ -10,11 +10,10 @@
 <html lang="${sessionScope.locale}">
 
 <head>
-    <title>Conference Smart App. <fmt:message key="sign.in"/></title>
+    <title>Taxi service<fmt:message key="sign.in"/></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/my.css">
     <script src="JavaScript/bootstrap.min.js"></script>
     <script src="JavaScript/showPass.js"></script>
 </head>
@@ -55,10 +54,7 @@
         <a href="resetPassword.jsp" class="link-dark"><fmt:message key="reset.password"/></a>
     </p>
 
-    <p class="fs-6 col-md-8">
-        <fmt:message key="no.account"/>
-        <a href="signUp.jsp" class="link-dark"><fmt:message key="sign.up"/></a>
-    </p>
+
 </div>
 
 <jsp:include page="fragments/footer.jsp"/>

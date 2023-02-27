@@ -20,16 +20,7 @@ public interface UserService extends Service<UserDTO>{
     List<UserDTO> getSortedUsers(String query) throws ServiceException;
 
 
-    List<UserDTO> getParticipants(String eventId, Role role) throws ServiceException;
-
-
     int getNumberOfRecords(String filter) throws ServiceException;
-
-
-    List<UserDTO> getSpeakers() throws ServiceException;
-
-
-    List<UserDTO> getModerators() throws ServiceException;
 
 
     void changePassword(long userId, String password, String newPass, String confirmPass) throws ServiceException;

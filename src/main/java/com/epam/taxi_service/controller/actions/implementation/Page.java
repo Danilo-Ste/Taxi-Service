@@ -4,7 +4,7 @@ public class Page {
     public static final String CONTROLLER_PAGE = "controller";
     public static final String INDEX_PAGE = "index.jsp";
     public static final String ABOUT_PAGE = "about.jsp";
-    public static final String CONTACTS_PAGE = "contacts.jsp";
+
     public static final String SIGN_IN_PAGE = "signIn.jsp";
     public static final String SIGN_UP_PAGE = "signUp.jsp";
     public static final String ERROR_PAGE = "error.jsp";

@@ -1,0 +1,7 @@
+2023-02-27 18:09:36.788 [main] ERROR com.epam.taxi_service.controller.actions.implementation.admin.DeleteUserAction - Couldn't delete user - no such user
+2023-02-27 18:09:36.813 [main] INFO  com.epam.taxi_service.controller.actions.implementation.base.SignInAction - em@em.ua entered web app
+2023-02-27 18:09:37.462 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-02-27 18:09:37.876 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6c5ae8fd
+2023-02-27 18:09:37.879 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-02-27 18:09:37.881 [main] ERROR com.epam.taxi_service.controller.context.AppContext - inStream parameter is null
+2023-02-27 18:09:37.972 [main] INFO  com.epam.taxi_service.controller.ContextListener - AppContext is set

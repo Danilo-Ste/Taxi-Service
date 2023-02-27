@@ -18,13 +18,11 @@ public class Controller extends HttpServlet {
     private static final ActionFactory ACTION_FACTORY = ActionFactory.getActionFactory();
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher(process(request, response)).forward(request, response);
     }
 
     @Override
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.sendRedirect(process(request, response));
     }

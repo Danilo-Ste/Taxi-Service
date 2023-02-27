@@ -4,13 +4,37 @@ import jakarta.servlet.http.HttpServletRequest;
 
 import static com.epam.taxi_service.controller.actions.implementation.Parameters.*;
 
+/**
+ * Configure request to set all required for page surfing attributes
+ * @author Danylo Stetsiuk
+ */
+
 public class PaginationUtil {
+
+
+    private static int getInt(String value, int min, int defaultValue) {
+        try {
+            int records = Integer.parseInt(value);
+            if (records >= min) {
+                return records;
+            }
+        } catch (NumberFormatException e) {
+            return defaultValue;
+        }
+        return defaultValue;
+    }
+
+    /**
+     * Calculates required attributes and sets them to request. In case of wrong offset and/or records - sets
+     * @param totalRecords - total number of records
+     */
 
     public static void paginate(int totalRecords, HttpServletRequest request) {
         int offset = getInt(request.getParameter(OFFSET), 0, 0);
         int records = getInt(request.getParameter(RECORDS), 1, 5);
         setAttributes(request, totalRecords, records, offset);
     }
+
 
     private static void setAttributes(HttpServletRequest request, int totalRecords, int records, int offset) {
         int pages = totalRecords / records + (totalRecords % records != 0 ? 1 : 0);
@@ -24,18 +48,6 @@ public class PaginationUtil {
         request.setAttribute(CURRENT_PAGE, currentPage);
         request.setAttribute(START, startPage);
         request.setAttribute(END, endPage);
-    }
-
-    private static int getInt(String value, int min, int defaultValue) {
-        try {
-            int records = Integer.parseInt(value);
-            if (records >= min) {
-                return records;
-            }
-        } catch (NumberFormatException e) {
-            return defaultValue;
-        }
-        return defaultValue;
     }
 
     private PaginationUtil() {}

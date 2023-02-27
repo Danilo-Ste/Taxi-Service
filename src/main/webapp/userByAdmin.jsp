@@ -9,11 +9,10 @@
 <html lang="${sessionScope.locale}">
 
 <head>
-    <title>Conference Smart App. <fmt:message key="view.user"/></title>
+    <title>Taxi service <fmt:message key="view.user"/></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/my.css">
     <script src="JavaScript/bootstrap.min.js"></script>
 </head>
 
@@ -26,24 +25,23 @@
 <div class="col-lg-5 mx-auto p-4 py-md-5">
     <tags:header value="view.user"/>
 
-    <c:set var="user" value="${requestScope.user}"/>
 
     <main>
-        <p class="fs-5"><fmt:message key="email"/>: <fmt:message key="${requestScope.user.email}"/></p>
-        <p class="fs-5"><fmt:message key="name"/>: <fmt:message key="${requestScope.user.name}"/></p>
-        <p class="fs-5"><fmt:message key="surname"/>: <fmt:message key="${requestScope.user.surname}"/></p>
-        <p class="fs-5"><fmt:message key="role"/>: <fmt:message key="${requestScope.user.role}"/></p>
+        <p class="fs-5"><fmt:message key="email"/>: ${requestScope.get('email')}</p>
+        <p class="fs-5"><fmt:message key="name"/>: ${requestScope.get('name')}</p>
+        <p class="fs-5"><fmt:message key="surname"/>: ${requestScope.get('surname')}</p>
+        <p class="fs-5"><fmt:message key="role"/>:${requestScope.get('role')}</p>
     </main>
 
     <form method="POST" action="controller">
         <input type="hidden" name="action" value="set-role">
-        <input type="hidden" name="email" value=${requestScope.user.email}>
+        <input type="hidden" name="email" value=${requestScope.get('email')}>
         <label>
             <select name="role" class="form-select mt-2">
-                <option value="CLIENT" ${requestScope.user.role eq 'CLIENT' ? 'selected' : ''}>
+                <option value="CLIENT" ${requestScope.get('role') eq 'CLIENT' ? 'selected' : ''}>
                     <fmt:message key="CLIENT"/>
                 </option>
-                <option value="ADMIN" ${requestScope.user.role eq 'ADMIN' ? 'selected' : ''}>
+                <option value="ADMIN" ${requestScope.get('role') eq 'ADMIN' ? 'selected' : ''}>
                     <fmt:message key="ADMIN"/>
                 </option>
             </select>

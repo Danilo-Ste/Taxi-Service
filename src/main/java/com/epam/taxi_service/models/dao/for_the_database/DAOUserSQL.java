@@ -54,6 +54,23 @@ public class DAOUserSQL implements UserDAO {
     }
 
     @Override
+    public int getNumberOfRecords (String filter) throws DAOException {
+        int numberOfRecords = 0;
+        String query = String.format(GET_NUMBER_OF_RECORDS, filter);
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    numberOfRecords = resultSet.getInt(NUMBER_OF_RECORDS);
+                }
+            }
+        }catch (SQLException e) {
+            throw new DAOException(e);
+        }
+        return numberOfRecords;
+    }
+
+    @Override
     public Optional<User>  getByEmail(String email) throws DAOException {
         User user = null;
         try (Connection connection = dataSource.getConnection();

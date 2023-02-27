@@ -3,13 +3,8 @@ package com.epam.taxi_service.models.connectionPool;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.Properties;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
+import java.util.Properties;
 import javax.sql.DataSource;
 
 public class ConnectionPool {

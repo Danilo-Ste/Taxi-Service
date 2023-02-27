@@ -9,12 +9,10 @@
 <html lang="${sessionScope.locale}">
 
 <head>
-    <title>Conference Smart App. <fmt:message key="view.users"/></title>
+    <title>Taxi service <fmt:message key="view.users"/></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/my.css">
     <script src="JavaScript/bootstrap.min.js"></script>
 </head>
 
@@ -40,18 +38,17 @@
                 </select>
             </label>&nbsp&nbsp&nbsp&nbsp&nbsp
 
-            <label for="records"><fmt:message key="number.records"/></label>
+            <label for="records"></label>
             <input class="col-2" type="number" min="1" name="records" id="records"
-                   value="${not empty requestScope.records ? requestScope.records : "5"}">&nbsp&nbsp&nbsp
+                   value="${not empty requestScope.records ? requestScope.records : "6"}">&nbsp&nbsp&nbsp
             <button type="submit" class="btn btn-dark mt-2 mb-3"><fmt:message key="submit"/></button>
         </form>
 
         <form class="col-1 mt-3" method="GET" action="controller">
-            <input type="hidden" name="action" value="users-pdf">
             <input type="hidden" name="role" value="${param.role}">
             <input type="hidden" name="sort" value="${param.sort}">
             <input type="hidden" name="order" value="${param.order}">
-            <button type="submit" class="icon-button"><i class="bi bi-download"></i></button>
+
         </form>
     </div>
 
@@ -126,7 +123,7 @@
     <c:set var="href" value="controller?action=view-users&role=${param.role}&sort=${param.sort}&order=${param.order}&"
            scope="request"/>
 
-    <jsp:include page="/fragments/pagination.jsp"/>
+    <jsp:include page="pagination.jsp"/>
 </div>
 
 <jsp:include page="fragments/footer.jsp"/>

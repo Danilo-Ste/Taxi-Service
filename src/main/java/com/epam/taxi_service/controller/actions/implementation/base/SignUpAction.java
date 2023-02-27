@@ -47,12 +47,10 @@ public class SignUpAction implements Action {
         UserDTO user = getUserDTO(request);
         request.getSession().setAttribute(USER, user);
         try {
-            //captcha.verify(request.getParameter(CAPTCHA));
             userService.add(user, request.getParameter(PASSWORD), request.getParameter(CONFIRM_PASSWORD));
             request.getSession().setAttribute(MESSAGE, SUCCEED_REGISTER);
             //sendEmail(user, getURL(request));
         } catch (IncorrectFormatException | PasswordMatchingException | DuplicateEmailException  e) {
-            //| CaptchaException
             request.getSession().setAttribute(ERROR, e.getMessage());
             path = SIGN_UP_PAGE;
         }

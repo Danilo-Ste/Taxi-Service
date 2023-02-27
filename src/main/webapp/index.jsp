@@ -8,7 +8,7 @@
 <html lang="${sessionScope.locale}">
 
 <head>
-    <title>Conference Smart App. <fmt:message key="main"/></title>
+    <title>Taxi service <fmt:message key="main"/></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -22,7 +22,7 @@
 
 
 <figure class="text-center">
-    <img src="image/Taxi.jpg" class="figure-img img-fluid rounded" alt="<fmt:message key="pic"/>">
+    <img src="image/Taxi.jpg" class="figure-img img-fluid rounded" >
     <figcaption class="figure-caption"><fmt:message key="pic.description"/></figcaption>
 </figure>
 

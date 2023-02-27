@@ -17,6 +17,8 @@ public interface UserDAO extends EntityDAO<User> {
 
     void updatePassword(User user) throws DAOException;
 
+    int getNumberOfRecords(String filter) throws DAOException;
+
 
     void setUserRole(String userEmail, Role role) throws DAOException;
 

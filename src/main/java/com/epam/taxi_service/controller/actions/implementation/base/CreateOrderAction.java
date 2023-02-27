@@ -47,18 +47,12 @@ public class CreateOrderAction implements Action {
     }
 
     private String executePost(HttpServletRequest request) throws ServiceException {
-        System.out.println(request);
         QueryBuilder queryBuilder = getQueryBuilder(request);
-        System.out.println(queryBuilder.getQuery());
         List<CarDTO> carDTOs = carServices.getSortedCars(queryBuilder.getQuery());
-        System.out.println(carDTOs.get(0).getId());
-
         try {
             if (!carDTOs.get(0).equals(null)){
-                System.out.println(request);
                 OrderDTO order = getOrderDTO(request,carDTOs.get(0).getId());
                 orderService.add(order);
-                System.out.println(request);
             }else {
                 return getActionToRedirect(UNABLE_TO_CREATE_ORDER,
                         NUMBER_OF_PEOPLE,request.getParameter(NUMBER_OF_PEOPLE),
@@ -81,13 +75,7 @@ public class CreateOrderAction implements Action {
     }
 
     private OrderDTO getOrderDTO(HttpServletRequest request, long car_id){
-        System.out.println(car_id + " check getOrder");
         UserDTO user = (UserDTO) request.getSession().getAttribute(LOGGED_USER);
-        System.out.println("----------");
-        System.out.println(request.getParameter(ADDRESS_OF_DEPARTURE));
-        System.out.println(request.getParameter(ADDRESS_OF_DESTINATION));
-        System.out.println(Long.parseLong(String.valueOf(user.getId())));
-        System.out.println();
     return OrderDTO.builder()
             .addressOfDeparture(request.getParameter(ADDRESS_OF_DEPARTURE))
             .addressOfDestination(request.getParameter(ADDRESS_OF_DESTINATION))

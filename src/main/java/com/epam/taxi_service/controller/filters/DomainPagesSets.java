@@ -22,7 +22,6 @@ public class DomainPagesSets {
         anonymousUserPages.add(CONTROLLER_PAGE);
         anonymousUserPages.add(INDEX_PAGE);
         anonymousUserPages.add(ABOUT_PAGE);
-        anonymousUserPages.add(CONTACTS_PAGE);
         anonymousUserPages.add(ERROR_PAGE);
         anonymousUserPages.add(SIGN_IN_PAGE);
         anonymousUserPages.add(SIGN_UP_PAGE);

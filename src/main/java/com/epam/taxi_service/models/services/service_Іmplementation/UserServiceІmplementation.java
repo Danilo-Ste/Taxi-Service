@@ -108,7 +108,15 @@ public class UserServiceІmplementation implements UserService {
 
     @Override
     public UserDTO getByEmail(String email) throws ServiceException {
-        return null;
+        validateEmail(email);
+        UserDTO userDTO;
+        try {
+            User user = userDAO.getByEmail(email).orElseThrow(NoSuchUserException::new);
+            userDTO = convertUserToDTO(user);
+        } catch (DAOException e) {
+            throw new ServiceException(e);
+        }
+        return userDTO;
     }
 
     @Override
@@ -123,24 +131,16 @@ public class UserServiceІmplementation implements UserService {
         return userDTOS;
     }
 
-    @Override
-    public List<UserDTO> getParticipants(String eventId, Role role) throws ServiceException {
-        return null;
-    }
 
     @Override
     public int getNumberOfRecords(String filter) throws ServiceException {
-        return 0;
-    }
-
-    @Override
-    public List<UserDTO> getSpeakers() throws ServiceException {
-        return null;
-    }
-
-    @Override
-    public List<UserDTO> getModerators() throws ServiceException {
-        return null;
+        int records;
+        try {
+            records = userDAO.getNumberOfRecords(filter);
+        } catch (DAOException e) {
+            throw new ServiceException(e);
+        }
+        return records;
     }
 
     @Override

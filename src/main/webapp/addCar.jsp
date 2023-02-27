@@ -12,7 +12,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/my.css">
   <script src="JavaScript/bootstrap.min.js"></script>
 </head>
 <body>
@@ -21,7 +20,7 @@
 <jsp:include page="fragments/menuChoice.jsp"/>
 
 <div class="col-lg-5 mx-auto p-4 py-md-5">
-  <tags:header value="add taxi"/>
+  <tags:header value="add.car"/>
   <form method="POST" action="controller">
     <input type="hidden" name="action" value="add-car">
 

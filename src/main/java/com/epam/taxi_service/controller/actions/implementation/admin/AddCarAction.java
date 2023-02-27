@@ -41,7 +41,7 @@ public class AddCarAction implements Action {
         CarDTO car = getCarDTO(request);
         try {
             carService.add(car);
-            return getActionToRedirect(SEARCH_USER_ACTION);
+            return getActionToRedirect(ADD_CAR_ACTION);
         } catch (IncorrectFormatException e) {
             request.getSession().setAttribute(CAR, car);
             request.getSession().setAttribute(ERROR, e.getMessage());
